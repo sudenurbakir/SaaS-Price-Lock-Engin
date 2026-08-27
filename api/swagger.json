@@ -1,0 +1,38 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "SaaS Price Lock Engine API",
+    "version": "1.0.0",
+    "description": "Müşteri özelinde sabit fiyatlandırma kurallarını yöneten API servisleri."
+  },
+  "paths": {
+    "/api/v1/price-overrides": {
+      "post": {
+        "summary": "Yeni Sabit Fiyat Kuralı Ekle",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "merchantId": 102,
+                "serviceId": 1,
+                "fixedAmount": 5000.00,
+                "currency": "TRY",
+                "startDate": "2026-09-01",
+                "endDate": "2027-01-01"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Kural başarıyla oluşturuldu."
+          },
+          "400": {
+            "description": "Çakışan tarih veya geçersiz parametre."
+          }
+        }
+      }
+    }
+  }
+}
