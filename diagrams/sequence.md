@@ -1,4 +1,3 @@
-**2. Sistem Bileşenleri Arası İletişim (Sequence Diagram)**
 sequenceDiagram
     autonumber
     participant Job as Fatura Cron Job
